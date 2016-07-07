@@ -1,0 +1,39 @@
+<!--
+  Generated template for the AddPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-navbar *navbar>
+  <ion-title>Add Weather</ion-title>
+  <ionic-buttons end>
+    <button royal (click)="dismiss()">
+      <ion-icon name="close-circle"></ion-icon>
+      </button>
+    </ionic-buttons>
+</ion-navbar>
+
+<ion-content padding class="add">
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>City</ion-label>
+      <ion-input type="text" [(ngModel)]="data.city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Country</ion-label>
+        <ion-select [(ngModel)]="data.country">
+          <ion-option value="US">United States
+          </ion-option>
+          <ion-option value="UK">United Kingdom</ion-option>
+          <ion-option value="India">India</ion-option>
+        </ion-select>
+      </ion-item>
+  </ion-list>
+  <div padding>
+    <button block (click)="dismiss(data)">Add Weather</button>
+    
+  </div>
+  
+
+  
+</ion-content>
