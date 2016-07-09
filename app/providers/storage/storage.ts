@@ -21,6 +21,14 @@ getWeathers()
   return this.storage.get(this.storageDb);
   
 }
+
+removeWeather(weather)
+{
+  var index=this.weathers.indexOf(weather);
+  console.log("index at storage"+index);
+  this.weathers.splice(index+1,1);
+   this.storage.set(this.storageDb,JSON.stringify(this.weathers));
+}
   
   setWeather(weather)
   {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import{Weather} from '../../providers/weather/weather';
 import{TemperaturePipe} from '../../pipes/temperature';
-
+import{WeatherInfoPage} from '../../pages/weather-info/weather-info';
 /*
   Generated class for the ForecastPage page.
 
@@ -22,6 +22,7 @@ export class ForecastPage {
 
   constructor(private nav: NavController, private navParams:NavParams,public weather:Weather ) {
     this.cityWeather=navParams.get('cityWeather');
+  this.getFore();
     
     
     
@@ -42,8 +43,12 @@ export class ForecastPage {
      err=>console.log(err),
      ()=>console.log('forecast complete')
      );
-       
-     }
+      }
+
+      info(weather)
+      {
+        this.nav.push(WeatherInfoPage,{weather:weather});
+      }
     
      
    }

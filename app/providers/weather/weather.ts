@@ -19,7 +19,7 @@ export class Weather {
    let url=this.baseUrl+'weather';
    url+='?appId='+this.appId;
    url+='&q='+city;
-   url+=','+country;
+  //  url+=','+country;
    return this.http.get(url); 
   }
 
@@ -33,6 +33,7 @@ forecast(cityId: string,numOfDays: number)
   
   
 }
+
 
 local()
 {

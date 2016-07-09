@@ -4,22 +4,23 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-navbar *navbar>
+<ion-navbar *navbar primary>
   <ion-title>{{cityWeather.name}} Forecast</ion-title>
 </ion-navbar>
 
 <ion-content padding class="forecast">
-  <h1>Enter the numboer of days of forecast needed</h1>
- <ion-input type="text" [(ngModel)]="days"></ion-input>
+  <h1>Enter the number of days of forecast</h1>
+ <ion-input type="text" [(ngModel)]="days" placeholder="Days between 1-14"></ion-input>
  <ion-buttons>
-   <button (click)="getFore()">Forecast</button>
+   <button (click)="getFore()" padding>Forecast</button>
    </ion-buttons>
   <ion-list>
-    <ion-item *ngFor="let weather of forecast" >
+    
+    <ion-item *ngFor="let weather of forecast" (click)="info(weather)">
       <ion-thumbnail item-left>
         <img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png">
       </ion-thumbnail>
-      <h2>{{weather.dt*1000|date: 'EEEE'}}</h2>
+      <h1>{{weather.dt*1000|date: 'EEEE'}}</h1>
       <h3>High {{weather.temp.max|temperature}}</h3>
       <h3>Low {{weather.temp.min|temperature}}</h3>
     </ion-item>

@@ -14,7 +14,7 @@ export class AddPage {
   constructor(private view: ViewController) {}
   public data=
   {
-    country:'us'
+    city:''
     
   };
   dismiss(formData)
